@@ -2,15 +2,17 @@ import express from 'express';
 import itemsRouter from "./Routers/Items";
 import cors from 'cors';
 import mysqldb from "./MySqlDb";
+import categoriesRouter from "./Routers/categories";
 
 
 const app = express();
-const port = 8044;
+const port = 8039;
 app.use(cors());
 
 
 app.use(express.json());
 app.use('/items', itemsRouter);
+app.use('/categories', categoriesRouter);
 
 
 
