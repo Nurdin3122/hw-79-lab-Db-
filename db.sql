@@ -20,7 +20,14 @@ create table items (
     name varchar(255) not null,
     description text,
     image varchar(255) null,
-    created_at datetime default current_timestamp null,
+    created_at datetime default (NOW()); null,
     foreign key (category_id) references categories(id),
     foreign key (location_id) references locations(id)
 );
+
+ INSERT INTO items (category_id, location_id, name, description, image, created_at) VALUES (
+ 1, 1, 'Офисный стол', 'Стол для офисной работы', 'стол.jpg' '2024-08-24 07:35:51'
+ );
+ INSERT INTO items (category_id, location_id, name, description, image, created_at) VALUES (
+ 2, 2, 'Ноут', 'для работы', 'ноут.jpg' '2024-08-24 08:14:51'
+ );
